@@ -9,4 +9,8 @@ abstract class MessagesError {
   static const operationNotAllowed = 'Aperação Não Pemitida Contate o ADM!!!';
   static const weakPassword = 'Senha Muito Fraca!!!';
   static const passwordMismatch = 'Confirmação não Confere!!!';
+  static const deleteSharedP = 'Erro ao Excluir Cache de Login!!!';
+  static const saveSharedP = 'Erro ao Salvar Cache de Login!!!';
+  static const saveSharedPKeyNotFound = 'Cache de Login Não Encontrado!!!';
+  static const fetchSharedP = 'Erro ao Recuperar Cache de Login!!!';
 }

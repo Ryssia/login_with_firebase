@@ -89,3 +89,13 @@ class EmailWeakPassword extends Failure {
     return msg;
   }
 }
+
+class UserSharedPrefencesError extends Failure {
+  String msg;
+  UserSharedPrefencesError(this.msg);
+
+  @override
+  String toString() {
+    return msg;
+  }
+}
