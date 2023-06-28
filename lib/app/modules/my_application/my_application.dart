@@ -14,9 +14,12 @@ import 'package:login_with_firebase/app/modules/my_application/src/views/page_2.
 import 'package:login_with_firebase/app/modules/my_application/src/views/signup_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'home_guard.dart';
+
 class MyApplication extends Module {
   @override
   List<Bind> binds = [
+    //AsyncBind((i) => SharedPreferences.getInstance()),
     Bind.lazySingleton((i) => AuthServiceManager(AuthType.email)),
     Bind.lazySingleton((i) => EmailAuthServiceImpl()),
     Bind.singleton((i) => AuthLocalCacheSharedPrefsImpl()),
@@ -38,7 +41,7 @@ class MyApplication extends Module {
 
   @override
   List<ModularRoute> routes = [
-    ChildRoute('/', child: (ctx, args) => const Home()),
+    ChildRoute('/', child: (ctx, args) => const Home(), guards: [HomeGuard()]),
     ChildRoute(
       '/signin-page',
       child: (context, args) => SignInPage(),

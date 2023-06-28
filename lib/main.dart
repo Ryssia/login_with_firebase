@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,23 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
+  // var service = AuthServiceManager(AuthType.email);
+  // var useCase = AuthSignInUserCaseImpl(service());
+  // var resp = await useCase('aa@com.br', '123456');
+  // await FirebaseAuth.instance.signOut();
+  // var t = await FirebaseAuth.instance.currentUser!.getIdTokenResult();
+  // print(t.authTime);
+  // print(t.expirationTime);
+  // print(DateTime.now());
+  // resp.fold((l) {
+  //   print('entrou no erro');
+  //   print(l);
+  // }, (r) async {
+  //   print(r.tokenExpireIn);
+  // });
+
+  // FirebaseFirestore.instance.collection('teste').add({'teste': 'ola mundo'});
+  //print('oi');
   // var service = AuthServiceManager(AuthType.email);
   // var useCase = AuthSignInUserCaseImpl(service());
   // var resp = await useCase('aa@com.br', '123456');

@@ -92,8 +92,18 @@ class AuthStore extends Store<UserCredentialApp?> {
           _isAuth = false;
           update(null, force: true);
         } else {
-          _isAuth = true;
-          update(userCredential);
+          var resultNew =
+              await _userSignIn(userCredential.email, userCredential.password!);
+          resultNew.fold(
+            (error) async {
+              await _localCache.delete(user: userCredential);
+              setError(error);
+            },
+            (userCredentialRenew) {
+              _isAuth = true;
+              update(userCredentialRenew);
+            },
+          );
         }
       },
     );

@@ -7,6 +7,9 @@ class AppModule extends Module {
   List<Bind> binds = [];
   @override
   List<ModularRoute> routes = [
-    ModuleRoute('/', module: MyApplication()),
+    ModuleRoute(
+      '/',
+      module: MyApplication(),
+    ),
   ];
 }
