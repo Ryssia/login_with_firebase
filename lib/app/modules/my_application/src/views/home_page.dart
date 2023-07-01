@@ -21,12 +21,12 @@ class Home extends StatelessWidget {
             DrawerListTile(
               title: "Página 1",
               iconData: Icons.home,
-              page: '/page1',
+              page: './page1',
             ),
             DrawerListTile(
               title: "Página 2",
               iconData: Icons.list,
-              page: '/page2',
+              page: './page2',
             ),
           ],
         ),
@@ -108,7 +108,7 @@ class LoginDrawerHeader extends StatelessWidget {
                         onPressed: () {
                           (authStore.isAuth)
                               ? authStore.userSignOut()
-                              : Modular.to.pushNamed('/signin-page');
+                              : Modular.to.pushNamed('./signin-page');
                         },
                         child: (authStore.isAuth)
                             ? const Text("Sair")
@@ -148,7 +148,7 @@ Widget gambiarra() {
               const Icon(Icons.login, size: 40),
               TextButton(
                 onPressed: () {
-                  Modular.to.pushNamed('/login-page');
+                  Modular.to.pushNamed('./signin-page');
                 },
                 child: const Text("Entrar ou Cadastrar Login"),
               ),
