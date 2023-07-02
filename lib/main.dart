@@ -12,7 +12,6 @@ import 'app/modules/my_application/src/authentication/data/use_cases/auth_signin
 import 'app/modules/my_application/src/authentication/domain/user_credencial_entity.dart';
 import 'app/modules/my_application/src/authentication/external/cache/auth_local_cache_sp_impl.dart';
 import 'app/modules/my_application/src/authentication/manager/auth_service_manager.dart';
-import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
