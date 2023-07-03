@@ -85,7 +85,10 @@ class SignUpPage extends StatelessWidget {
                       store: authStore,
                       onError: (context, error) =>
                           MessagesApp.showCustom(context, error.toString()),
-                      onState: (context_, state) => Modular.to.pop(),
+                      onState: (context_, state) {
+                        Modular.to.popUntil(ModalRoute.withName(
+                            '/signin-page')); // Voltar para a página "/signin-page"
+                      },
                       child: Container(
                         width: size.width * 0.75,
                         height: size.height * 0.06,
@@ -110,7 +113,7 @@ class SignUpPage extends StatelessWidget {
                             backgroundColor: Colors.black,
                           ),
                           child: const Text(
-                            'Entrar',
+                            'Salvar',
                             style: TextStyle(fontSize: 20),
                           ),
                         ),

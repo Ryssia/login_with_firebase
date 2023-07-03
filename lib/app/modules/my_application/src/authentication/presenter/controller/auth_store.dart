@@ -98,6 +98,7 @@ class AuthStore extends Store<UserCredentialApp?> {
             (error) async {
               await _localCache.delete(user: userCredential);
               setError(error);
+              print(error.toString());
             },
             (userCredentialRenew) {
               _isAuth = true;

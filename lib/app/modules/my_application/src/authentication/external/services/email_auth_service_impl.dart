@@ -42,6 +42,7 @@ class EmailAuthServiceImpl implements IAuthService {
         return Left(UserDisabled(MessagesError.userDisabled));
       }
     } catch (e) {
+      print(e.toString());
       return Left(DefaultError(MessagesError.defaultError));
     }
 
@@ -92,6 +93,7 @@ class EmailAuthServiceImpl implements IAuthService {
         return Left(EmailWeakPassword(MessagesError.weakPassword));
       }
     } catch (e) {
+      print(e.toString());
       return Left(DefaultError(MessagesError.defaultError));
     }
 
