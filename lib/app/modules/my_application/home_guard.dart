@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'my_application.dart';
+import 'my_application_module.dart';
 
 class HomeGuard extends RouteGuard {
   @override

@@ -66,7 +66,8 @@ class SignInPage extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () => Modular.to.pushNamed('/signup-page'),
+                        onPressed: () =>
+                            Modular.to.pushNamed('/myapplication/signup-page'),
                         child: const Text(
                           'Cadastra-se',
                           style: TextStyle(
@@ -87,10 +88,11 @@ class SignInPage extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () async {
                             if (_formKey.currentState!.validate()) {
-                              authStore.userSignIn(
+                              await authStore.userSignIn(
                                   email: _userLoginController.text.trim(),
                                   password:
                                       _userPasswordController.text.trim());
+                              //navegar proxima pg
                             }
                           },
                           style: ElevatedButton.styleFrom(

@@ -1,7 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'modules/my_application/my_application.dart';
+import 'modules/my_application/my_application_module.dart';
 import 'modules/splash/splash_module.dart';
 
 class AppModule extends Module {
