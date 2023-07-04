@@ -6,13 +6,13 @@ import '../authentication/domain/user_credencial_entity.dart';
 import '../authentication/presenter/controller/auth_store.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('Meu aplicativo Pokedex'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -27,6 +27,33 @@ class Home extends StatelessWidget {
               title: "Página 2",
               iconData: Icons.list,
               page: './page2',
+            ),
+          ],
+        ),
+      ),
+      body: Center(
+        // Conteúdo principal da página
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Bem-Vindo a sua Pokedex!',
+              style: TextStyle(fontSize: 24),
+            ),
+            const SizedBox(height: 16),
+            TextButton(
+              onPressed: () {
+                Modular.to.pushNamed('./signin-page');
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.login), // Ícone de entrada
+                  const SizedBox(
+                      width: 8), // Espaçamento entre o ícone e o texto
+                  Text("Entrar"),
+                ],
+              ),
             ),
           ],
         ),
