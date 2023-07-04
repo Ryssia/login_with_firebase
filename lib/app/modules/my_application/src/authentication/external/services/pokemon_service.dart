@@ -19,4 +19,28 @@ class PokemonService {
       // Tratar o erro aqui se necessário.
     }
   }
+
+  Future<void> updatePokemonName(String pokemonId, String newName) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('Pokemons')
+          .doc(pokemonId)
+          .update({'name': newName});
+    } catch (e) {
+      print('Erro ao atualizar o nome do pokemon: $e');
+      // Tratar o erro aqui se necessário.
+    }
+  }
+
+  Future<void> deletePokemon(String pokemonId) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('Pokemons')
+          .doc(pokemonId)
+          .delete();
+    } catch (e) {
+      print('Erro ao excluir o pokemon: $e');
+      // Tratar o erro aqui se necessário.
+    }
+  }
 }

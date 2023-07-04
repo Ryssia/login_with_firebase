@@ -53,7 +53,7 @@ class MyApplication extends Module {
     ),
     ChildRoute(
       '/page2',
-      child: (context, args) => Page2(),
+      child: (context, args) => PokemonCrudPage(),
     ),
   ];
 }
