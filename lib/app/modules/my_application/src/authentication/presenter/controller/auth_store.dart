@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
 import '../../domain/use_cases_interfaces/auth_signin_user_case_contract.dart';
@@ -25,6 +27,21 @@ class AuthStore extends Store<UserCredentialApp?> {
     _userSignUp = userSignUp;
     _localCache = localCache;
     _userLocalCache();
+  }
+
+  String? getCurrentUserId() {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    if (currentUser != null) {
+      return currentUser.uid;
+    }
+    return null;
+  }
+
+  void checkCurrentUser() {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    if (currentUser != null) {
+      Modular.to.navigate('/home-page');
+    }
   }
 
   bool get isAuth => _isAuth;
