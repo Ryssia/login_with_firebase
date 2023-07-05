@@ -20,6 +20,7 @@ class EmailAuthServiceImpl implements IAuthService {
           .doc(response.user?.uid)
           .get();
 
+      String userName = dataResponde.data()?['nome'] ?? '';
       UserCredentialApp userReponse = UserCredentialApp(
         authType: AuthType.email,
         email: response.user!.email as String,
@@ -27,7 +28,7 @@ class EmailAuthServiceImpl implements IAuthService {
         token: responeCredential?.token,
         tokenExpireIn: responeCredential?.expirationTime,
         password: password,
-        name: dataResponde.data()?['nome'] as String,
+        name: userName,
       );
 
       return Right(userReponse);

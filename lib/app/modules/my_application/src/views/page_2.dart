@@ -48,7 +48,9 @@ class _PokemonCrudPageState extends State<PokemonCrudPage> {
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
-                    .collection('Pokemons')
+                    .collection('Users')
+                    .doc(FirebaseAuth.instance.currentUser!.uid)
+                    .collection('Pokemon')
                     .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {

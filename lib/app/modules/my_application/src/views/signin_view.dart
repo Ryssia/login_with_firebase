@@ -79,7 +79,9 @@ class SignInPage extends StatelessWidget {
                     SizedBox(height: size.height * 0.02),
                     ScopedListener<AuthStore, UserCredentialApp?>(
                       store: authStore,
-                      onState: (context_, state) => Modular.to.pop(),
+                      onState: (context_, state) {
+                        Modular.to.pop();
+                      },
                       onError: (context, error) =>
                           MessagesApp.showCustom(context, error.toString()),
                       child: Container(
@@ -92,7 +94,6 @@ class SignInPage extends StatelessWidget {
                                   email: _userLoginController.text.trim(),
                                   password:
                                       _userPasswordController.text.trim());
-                              //navegar proxima pg
                             }
                           },
                           style: ElevatedButton.styleFrom(
