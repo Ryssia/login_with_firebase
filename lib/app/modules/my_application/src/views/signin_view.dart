@@ -81,6 +81,8 @@ class SignInPage extends StatelessWidget {
                       store: authStore,
                       onState: (context_, state) {
                         Modular.to.pop();
+                        Modular.to.pushNamed(
+                            './page2'); //depois do login redireciona para pagina de crud pokemon
                       },
                       onError: (context, error) =>
                           MessagesApp.showCustom(context, error.toString()),
