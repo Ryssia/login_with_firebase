@@ -47,6 +47,7 @@ class _PokemonCrudPageState extends State<PokemonCrudPage> {
             SizedBox(height: 16.0),
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
+                //implementa reatividade pois atualiza automaticamente a interface do usuário com base nas alterações nos dados do Firestore, permitindo que a lista de Pokémons seja exibida em tempo real e respondendo a alterações no banco de dados.
                 stream: FirebaseFirestore.instance
                     .collection('Users')
                     .doc(FirebaseAuth.instance.currentUser!.uid)
