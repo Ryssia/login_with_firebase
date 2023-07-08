@@ -1,5 +1,8 @@
 # login_with_firebase
 
+Vídeo com explicação do código e do projeto
+https://youtu.be/FEWL2JVNtvQ
+
 A new Flutter project.
 
 ## Getting Started
